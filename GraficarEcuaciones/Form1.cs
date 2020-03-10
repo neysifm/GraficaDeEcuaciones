@@ -88,6 +88,16 @@ namespace GraficarEcuaciones
 
         }
 
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            int xcentro = pictureBox1.Width / 2;
+            int ycentro = pictureBox1.Height / 2;
+            e.Graphics.TranslateTransform(xcentro, ycentro);
+            e.Graphics.ScaleTransform(1, -1);
+            e.Graphics.DrawLine(mylapiz1, xcentro * -10, 0, xcentro * 10, 0); // EJE X
+            e.Graphics.DrawLine(mylapiz1, 0, ycentro * 10, 0, ycentro * -10); // EJE Y
+        }
+
         private void resolvercs()
         {
             double pen, interx, intery, tang, interx1, ang;
@@ -119,5 +129,7 @@ namespace GraficarEcuaciones
             intery = interx1 / fgb;
           //  txtiy.Text = intery.ToString();
         }
+
+
     }
 }
