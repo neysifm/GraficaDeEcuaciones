@@ -54,7 +54,7 @@
             this.txbA = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnresolver1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,7 +87,7 @@
             this.groupBox1.Controls.Add(this.txbA);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.metroButton2);
-            this.groupBox1.Controls.Add(this.metroButton1);
+            this.groupBox1.Controls.Add(this.btnresolver1);
             this.groupBox1.Location = new System.Drawing.Point(22, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 360);
@@ -551,14 +551,15 @@
             this.metroButton2.Text = "Limpiar";
             this.metroButton2.UseSelectable = true;
             // 
-            // metroButton1
+            // btnresolver1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(214, 127);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(103, 29);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "Resolver";
-            this.metroButton1.UseSelectable = true;
+            this.btnresolver1.Location = new System.Drawing.Point(214, 127);
+            this.btnresolver1.Name = "btnresolver1";
+            this.btnresolver1.Size = new System.Drawing.Size(103, 29);
+            this.btnresolver1.TabIndex = 0;
+            this.btnresolver1.Text = "Resolver";
+            this.btnresolver1.UseSelectable = true;
+            this.btnresolver1.Click += new System.EventHandler(this.btnresolver1_Click);
             // 
             // pictureBox1
             // 
@@ -602,7 +603,7 @@
         private MetroFramework.Controls.MetroTextBox txbA;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnresolver1;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel10;

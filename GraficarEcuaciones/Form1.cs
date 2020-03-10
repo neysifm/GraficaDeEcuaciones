@@ -245,10 +245,39 @@ namespace GraficarEcuaciones
                     Point ucord2 = new Point((int)x22, (int)miau22);
 
                     ent.DrawLine(mylapiz2, (int)x22, (int)miau2, (int)x23, (int)miau22);
-
                 }
             }
         }
 
+        private void btnresolver1_Click(object sender, EventArgs e)
+        {
+            if (txbA.Text == "" && txbB.Text == "" && txbC.Text == "" && textbox6.Text == "" && textbox2.Text == "" && textbox7.Text == "" && textbox8.Text == "")
+            {
+                MessageBox.Show("Ingrese Valores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (txbA.Text == "" || txbB.Text == "" || txbC.Text == "")
+                {
+                    respunto();
+                    if ((textbox6.Text != textbox8.Text) && (textbox7.Text != textbox2.Text))
+                    {
+                        graficar1();
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (textbox6.Text == "" || textbox2.Text == "" || textbox7.Text == "" || textbox8.Text == "")
+                    {
+                        resolvercs();
+                        graficar1();
+                    }
+                }
+            }
+        }
     }
 }
