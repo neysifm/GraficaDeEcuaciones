@@ -130,6 +130,125 @@ namespace GraficarEcuaciones
             txtiy.Text = intery.ToString();
         }
 
+        private void graficar1()
+        {
+            System.Drawing.Graphics ent = this.pictureBox1.CreateGraphics();
+            int xcentro = pictureBox1.Width / 2;
+            int ycentro = pictureBox1.Height / 2;
+            ent.TranslateTransform(xcentro, ycentro);
+            ent.ScaleTransform(1, -1);
+
+            double a, b;
+            a = Convert.ToDouble(txtix.Text);
+            b = Convert.ToDouble(txtiy.Text);
+
+            if (a < -40 || a > 40 || b < -40 || b > 40)
+            {
+                //PINTAR LAS RAYAS
+                for (int c = -xcentro; c <= xcentro; c += 4)
+                {
+                    ent.DrawLine(mylapiz1, -1 * 2, c * 2, 1 * 2, c * 2);
+                    ent.DrawLine(mylapiz1,  c * 2, 1 * 2, c * 2, -1 * 2);
+                }
+
+                double x1, y1, punto1, c3, punto1a, x11, y11, c11, punto2, punto2a;
+
+                x1 = Convert.ToDouble(txbA.Text);
+                y1 = Convert.ToDouble(txbB.Text);
+                c3 = Convert.ToDouble(txbC.Text);
+
+                x11 = x1 * 2;
+                y11 = y1 * 2;
+                c11 = c3 * 2;
+
+                //RESOLVER LA ECUACION CUANDO X TIENDE A -100
+                punto1 = (((x1 * -100) + c3) * -1);
+                punto1a = ((punto1 / y1) * 2);
+
+                //RESOLVER LA ECUACION CUANDO X TIENDE A 100
+                punto2 = (((x1 * 100) + c3) * -1);
+                punto2a = ((punto1 / y1) * 2);
+
+                double x22, x23;
+                x22 = -100 * 2;
+                x23 = 100 * 2;
+
+                Point ucord1 = new Point((int)x22, (int)punto1a);
+                Point ucord2 = new Point((int)x23, (int)punto2a);
+
+                ent.DrawLine(mylapiz2, (int)x22, (int)punto1a, (int)x23, (int)punto2a);
+            }
+            else
+            {
+                if (a < -20 || a> 20 || b < -20 || b > 20)
+                {
+                    for (int c = -xcentro; c <=xcentro; c += 2)
+                    {
+                        ent.DrawLine(mylapiz1, -1 * 5, c * 5, 1 * 5, c * 5);
+                        ent.DrawLine(mylapiz1, c * 5, 1 * 5, c * 5, -1 * 5);
+                    }
+
+                    double x1, y1, miau, c3, miau2, x11, y11, c11, miau11, miau22;
+
+                    x1 = Convert.ToDouble(txbA.Text);
+                    y1 = Convert.ToDouble(txbB.Text);
+                    c3 = Convert.ToDouble(txbC.Text);
+
+                    x11 = x1 * 5;
+                    y11 = y1 * 5;
+                    c11 = c3 * 5;
+
+                    miau = (((x1 * -100) + c3) * -1);
+                    miau2 = ((miau / y1) * 5);
+
+                    miau11 = (((x1 * 100) + c3) * -1);
+                    miau22 = ((miau11 / y1) * 5);
+
+                    double x22, x23;
+                    x22 = -100 * 5;
+                    x23 = 100 * 5;
+
+                    Point ucord1 = new Point((int)x22, (int)miau2);
+                    Point ucord2 = new Point((int)x22, (int)miau22);
+
+                    ent.DrawLine(mylapiz2, (int)x22, (int)miau2, (int)x23, (int)miau22);
+                }
+                else
+                {
+                    for (int c = -xcentro; c <= xcentro; c += 1)
+                    {
+                        ent.DrawLine(mylapiz1, -1 * 20, c * 20, 1 * 20, c * 20);
+                        ent.DrawLine(mylapiz1, c * 20, 1 * 20, c * 20, -1 * 20);
+                    }
+
+                    double x1, y1, miau, c3, miau2, x11, y11, c11, miau11, miau22;
+
+                    x1 = Convert.ToDouble(txbA.Text);
+                    y1 = Convert.ToDouble(txbB.Text);
+                    c3 = Convert.ToDouble(txbC.Text);
+
+                    x11 = x1 * 20;
+                    y11 = y1 * 20;
+                    c11 = c3 * 20;
+
+                    miau = (((x1 * -100) + c3) * -1);
+                    miau2 = ((miau / y1) * 20);
+
+                    miau11 = (((x1 * 100) + c3) * -1);
+                    miau22 = ((miau11 / y1) * 20);
+
+                    double x22, x23;
+                    x22 = -100 * 20;
+                    x23 = 100 * 20;
+
+                    Point ucord1 = new Point((int)x22, (int)miau2);
+                    Point ucord2 = new Point((int)x22, (int)miau22);
+
+                    ent.DrawLine(mylapiz2, (int)x22, (int)miau2, (int)x23, (int)miau22);
+
+                }
+            }
+        }
 
     }
 }
