@@ -30,14 +30,14 @@ namespace GraficarEcuaciones
 
             try
             {
-                px1 = Convert.ToDouble(txbA.Text);
-                px2 = Convert.ToDouble(txbB.Text);   // HAY QUE VERIFICAR QUE LOS TEXTBOX SEAN
-                py1 = Convert.ToDouble(txbC.Text);   // LOS CORRETOS,PARA ONTENER LOS DATOS DE LAS VARIABLES
-                py2 = Convert.ToDouble(metroTextBox4.Text);
+                px1 = Convert.ToDouble(textbox6.Text);
+                px2 = Convert.ToDouble(textbox8.Text);   
+                py1 = Convert.ToDouble(textbox2.Text);   
+                py2 = Convert.ToDouble(textbox7.Text);
                 Y = 1;
 
                 pen = ((py2 - py1) / (px2 - px1));
-               // txbpendiente.Text = pen.ToString(); revisa que tenga el nombre de txbpendiente
+                txbpendiente.Text = pen.ToString(); 
 
                 // FORMULA GENERAL DE ECUACION
 
@@ -54,10 +54,10 @@ namespace GraficarEcuaciones
                     txbC.Text = yy2.ToString();
 
                     interx1 = ((yy2 * -1) / Math.Abs(pen));
-                   // txtix.Text = interx1.ToString();
+                    txtix.Text = interx1.ToString();
 
                     intery = yy2 * -1;
-                  //  txtiy.Text = intery.ToString();
+                    txtiy.Text = intery.ToString();
 
                 }
                 else
@@ -68,9 +68,9 @@ namespace GraficarEcuaciones
                     txbC.Text = yy2.ToString();
 
                     interx1 = ((yy2 * -1) / Math.Abs(pen));
-                    // txtix.Text = interx1.ToString();
+                    txtix.Text = interx1.ToString();
 
-                   // txtiy.Text = yy2.ToString();
+                    txtiy.Text = yy2.ToString();
                 }
 
                 tang = (((Math.Atan(pen)) * 180) / Math.PI);
@@ -78,11 +78,11 @@ namespace GraficarEcuaciones
                 if (tang < 0)
                 {
                     ang = tang + 180;
-                 //   Txbangulox.Text = ang.ToString();
+                    Txbangulox.Text = ang.ToString();
                 }
                 else
                 {
-                    //   Txbangulox.Text = tang.ToString();
+                    Txbangulox.Text = tang.ToString();
                 }
             }catch (OverflowException e) { }
 
@@ -115,19 +115,19 @@ namespace GraficarEcuaciones
             if (tang < 0)
             {
                 ang = tang + 180;
-               // Txbangulox.Text = ang.ToString();
+                Txbangulox.Text = ang.ToString();
             }
             else
             {
-                //   Txbangulox.Text = tang.ToString();
+                Txbangulox.Text = tang.ToString();
             }
 
             interx1 = fgc * -1;
             interx = interx1 / fga;
-            //   txtix.Text = interx.ToString();
+            txtix.Text = interx.ToString();
 
             intery = interx1 / fgb;
-          //  txtiy.Text = intery.ToString();
+            txtiy.Text = intery.ToString();
         }
 
 
