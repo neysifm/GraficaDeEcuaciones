@@ -279,5 +279,47 @@ namespace GraficarEcuaciones
                 }
             }
         }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            txbpendiente.Clear();
+            Txbangulox.Clear();
+            txtix.Clear();
+            txtiy.Clear();
+        }
+
+        private void txbA_MouseClick(object sender, MouseEventArgs e)
+        {
+            textbox2.ReadOnly = true;
+            textbox6.ReadOnly = true;
+            textbox7.ReadOnly = true;
+            textbox8.ReadOnly = true;
+
+            textbox2.Clear();
+            textbox6.Clear();
+            textbox7.Clear();
+            textbox8.Clear();
+
+            txbA.ReadOnly = false;
+            txbB.ReadOnly = false;
+            txbC.ReadOnly = false;
+        }
+
+        private void textbox6_MouseClick(object sender, MouseEventArgs e)
+        {
+            txbA.ReadOnly = true;
+            txbB.ReadOnly = true;
+            txbC.ReadOnly = true;
+
+            txbA.Clear();
+            txbB.Clear();
+            txbC.Clear();
+
+            textbox2.ReadOnly = false;
+            textbox6.ReadOnly = false;
+            textbox7.ReadOnly = false;
+            textbox8.ReadOnly = false;
+        }
     }
 }

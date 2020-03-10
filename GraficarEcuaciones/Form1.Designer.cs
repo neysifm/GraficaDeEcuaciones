@@ -442,6 +442,7 @@
             this.textbox6.UseSelectable = true;
             this.textbox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textbox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textbox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textbox6_MouseClick);
             // 
             // txbC
             // 
@@ -532,6 +533,7 @@
             this.txbA.UseSelectable = true;
             this.txbA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txbA.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txbA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbA_MouseClick);
             // 
             // metroLabel1
             // 
@@ -550,6 +552,7 @@
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Limpiar";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // btnresolver1
             // 
