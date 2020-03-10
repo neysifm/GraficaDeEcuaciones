@@ -87,5 +87,37 @@ namespace GraficarEcuaciones
             }catch (OverflowException e) { }
 
         }
+
+        private void resolvercs()
+        {
+            double pen, interx, intery, tang, interx1, ang;
+            double fga, fgb, fgc;
+
+            fga = Convert.ToDouble(txbA.Text);
+            fgb = Convert.ToDouble(txbB.Text);  
+            fgc = Convert.ToDouble(txbC.Text);
+
+            pen = (-1 * (fga / fgb)); // RESOLVER LA PENDIENTE
+            txbpendiente.Text = pen.ToString();
+
+            tang = ((Math.Atan(pen)) * 180) / Math.PI;
+
+            if (tang < 0)
+            {
+                ang = tang + 180;
+               // Txbangulox.Text = ang.ToString();
+            }
+            else
+            {
+                //   Txbangulox.Text = tang.ToString();
+            }
+
+            interx1 = fgc * -1;
+            interx = interx1 / fga;
+            //   txtix.Text = interx.ToString();
+
+            intery = interx1 / fgb;
+          //  txtiy.Text = intery.ToString();
+        }
     }
 }
