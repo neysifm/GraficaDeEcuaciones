@@ -30,9 +30,9 @@ namespace GraficarEcuaciones
 
             try
             {
-                px1 = Convert.ToDouble(metroTextBox1.Text);
-                px2 = Convert.ToDouble(metroTextBox2.Text);   // HAY QUE VERIFICAR QUE LOS TEXTBOX SEAN
-                py1 = Convert.ToDouble(metroTextBox3.Text);   // LOS CORRETOS,PARA ONTENER LOS DATOS DE LAS VARIABLES
+                px1 = Convert.ToDouble(txbA.Text);
+                px2 = Convert.ToDouble(txbB.Text);   // HAY QUE VERIFICAR QUE LOS TEXTBOX SEAN
+                py1 = Convert.ToDouble(txbC.Text);   // LOS CORRETOS,PARA ONTENER LOS DATOS DE LAS VARIABLES
                 py2 = Convert.ToDouble(metroTextBox4.Text);
                 Y = 1;
 
@@ -47,10 +47,44 @@ namespace GraficarEcuaciones
                 if (pen < 0) // CONDICION SI X ES NEGATIVO
                 {
                     x = (pen * -1);
+                    txbA.Text = x.ToString();
+                    Y = 1;
+                    txbB.Text = Y.ToString();
+                    yy2 = yy2 * -1;
+                    txbC.Text = yy2.ToString();
+
+                    interx1 = ((yy2 * -1) / Math.Abs(pen));
+                   // txtix.Text = interx1.ToString();
+
+                    intery = yy2 * -1;
+                  //  txtiy.Text = intery.ToString();
 
                 }
+                else
+                {
+                    txbA.Text = pen.ToString();
+                    Y = 1;
+                    txbB.Text = Y.ToString();
+                    txbC.Text = yy2.ToString();
 
-            }
+                    interx1 = ((yy2 * -1) / Math.Abs(pen));
+                    // txtix.Text = interx1.ToString();
+
+                   // txtiy.Text = yy2.ToString();
+                }
+
+                tang = (((Math.Atan(pen)) * 180) / Math.PI);
+
+                if (tang < 0)
+                {
+                    ang = tang + 180;
+                 //   Txbangulox.Text = ang.ToString();
+                }
+                else
+                {
+                    //   Txbangulox.Text = tang.ToString();
+                }
+            }catch (OverflowException e) { }
 
         }
     }
